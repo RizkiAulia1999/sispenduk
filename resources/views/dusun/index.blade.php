@@ -49,7 +49,7 @@
                                         <td>{{ $d->rt }}</td>
                                         <td>{{ $d->rw }}</td>
                                         <td>
-                                        <form action="/dusun/{{$d->id}}" method="post"> 
+           s                             <form action="/dusun/{{$d->id}}" method="post"> 
                                             <a href="/dusun/{{$d->id}}/edit" class="btn btn-warning">Edit</a>
                                             @csrf
                                             @method('DELETE')
