@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PendudukController;
+use App\Http\Controllers\DusunController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +13,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('penduduk', PendudukController::class);
+Route::resource('dusun', DusunController::class);
+
