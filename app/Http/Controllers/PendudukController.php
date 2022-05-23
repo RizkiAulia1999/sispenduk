@@ -87,7 +87,8 @@ class PendudukController extends Controller
     public function edit($id)
     {
         $penduduk = Penduduk::find($id);
-        return view('penduduk.edit',['penduduks'=>$penduduk]);
+        $dusun = Dusun::all();
+        return view('penduduk.edit',['penduduks'=>$penduduk,'dusun'=>$dusun]);
 
     }
 
@@ -101,14 +102,17 @@ class PendudukController extends Controller
     public function update(Request $request, $id)
     {
         $penduduk = Penduduk::find($id);
+        $dusun = new Dusun; 
+
         $penduduk->id= $request->id;
         $penduduk->nik = $request->nik;
         $penduduk->nama = $request->nama;
         $penduduk->tanggallahir = $request->tanggallahir;
-        $penduduk->alamat= $request->alamat;
+        $dusun->id = $request->dusun;
         $penduduk->jeniskelamin= $request->jeniskelamin;
         $penduduk->pekerjaan= $request->pekerjaan;
 
+        $penduduk->dusun()->associate($dusun);
         $penduduk->save();
 
         return redirect()->route('penduduk.index');

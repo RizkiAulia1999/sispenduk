@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Agama extends Model
 {
-    use HasFactory;
+    protected $table = "agamas";
+
+    public function penduduks()
+    {
+    return $this->hasMany(Penduduk::class);
+    }
 }

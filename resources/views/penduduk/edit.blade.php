@@ -31,8 +31,14 @@
                             <input type="text" class="form-control" required="required" name="tanggallahir" value="{{$penduduks->tanggallahir}}"></br>
                         </div>
                         <div class="form-group">
-                            <label for="alamat">Alamat</label>
-                            <input type="text" class="form-control" required="required" name="alamat" value="{{$penduduks->alamat}}"></br>
+                            <label for="dusun">Dusun</label>
+                            <select class="form-control" name="dusun">
+                                @foreach($dusun as $d)
+                                    <option value="{{$d->id}}" {{ $penduduks->dusun_id == $d->id? "selected":"" }}>
+                                    {{ $d->dusun}}
+                                    </option>
+                                @endforeach
+                            </select><br>                          
                         </div>
                         <div class="form-group">
                             <label for="jeniskelamin">Jenis Kelamin</label>

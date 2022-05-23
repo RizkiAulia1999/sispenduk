@@ -17,8 +17,8 @@
                     <form action="/dusun" method="post" enctype="multipart/form-data" >
                         @csrf
                         <div class="form-group"> 
-                            <label for="nama">Nama</label>
-                            <input type="text" class="form-control" required="required" name="nama"></br>
+                            <label for="dusun">Nama</label>
+                            <input type="text" class="form-control" required="required" name="dusun"></br>
                         </div>
                         <div class="form-group">
                             <label for="rt">RT</label>

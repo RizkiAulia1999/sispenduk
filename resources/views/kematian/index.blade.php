@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col">
             <div class="card">
-                <div class="card-header">{{ __('DATA DUSUN ') }}</div>
+                <div class="card-header">{{ __('DATA KEMATIAN  ') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,19 +14,7 @@
                         </div>
                     @endif
 
-                     <!--fitur search data-->
-                     <div class="row">
-                        <form action="/dusun" class="form-inline" method="get">
-                            <gitdiv class="form-group mx-sm-3 mb-3">
-                                <input name="keyword" type="text" class="form-control" placeholder="Name">
-                            </gitdiv>
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-primary mb-3">Cari</button>
-                            </div> 
-                        </form>
-                    </div>
-
-                    <a href="/dusun/create" class="btn btn-primary">Tambah Data</a> 
+                    <a href="/kematian/create" class="btn btn-primary">Tambah Data</a> 
                     <br><br>
                     
                      <div class="card-body">
@@ -35,23 +23,25 @@
                                 <thead>
                                     <tr>
                                         <th width="50px">No</th>
-                                        <th>Nama</th>
-                                        <th>RT</th>
-                                        <th>RW</th>
+                                        <th>NIK</th>
+                                        <th>Umur</th>
+                                        <th>Tanggal Kematian</th>
+                                        <th>Tempat Kematian</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php $no=1; ?>
-                                    @foreach($dusuns as $d)
+                                    @foreach($kematians as $k)
                                     <tr>
                                         <td>{{ $no++}}</td>
-                                        <td>{{ $d->dusun }}</td>
-                                        <td>{{ $d->rt }}</td>
-                                        <td>{{ $d->rw }}</td>
+                                        <td>{{ $k->penduduks->nik }}</td>
+                                        <td>{{ $k->umur }}</td>
+                                        <td>{{ $k->tanggalkematian}}</td>
+                                        <td>{{ $k->tempatkematian }}</td>
                                         <td>
-                                        <form action="/dusun/{{$d->id}}" method="post"> 
-                                            <a href="/dusun/{{$d->id}}/edit" class="btn btn-warning">Edit</a>
+                                        <form action="/kematian/{{$k->id}}" method="post"> 
+                                            <a href="/kematian/{{$k->id}}/edit" class="btn btn-warning">Edit</a>
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" name="delete" class="btn btn-danger">Delete</button>

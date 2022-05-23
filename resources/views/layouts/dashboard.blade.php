@@ -76,13 +76,13 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="/agama" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Agama</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="/kematian" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Kematian</p>
                 </a>
