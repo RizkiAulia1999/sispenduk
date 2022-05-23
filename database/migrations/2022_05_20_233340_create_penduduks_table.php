@@ -18,7 +18,6 @@ class CreatePenduduksTable extends Migration
             $table->string('nik', 100);
             $table->string('nama', 100);
             $table->string('tanggallahir', 100);
-            $table->string('alamat', 100);
             $table->string('jeniskelamin', 100);
             $table->string('pekerjaan', 100);
             $table->timestamps();

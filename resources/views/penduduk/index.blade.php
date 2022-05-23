@@ -38,26 +38,31 @@
                                         <th>NIK</th>
                                         <th>Nama</th>
                                         <th>Tempat,TanggalLahir</th>
-                                        <th>Alamat</th>
+                                        <th>Dusun</th>
+                                        <th>Agama</th>
                                         <th>Jenis Kelamin</th>
                                         <th>Pekerjaan</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php $no=1; ?>
                                     @foreach($penduduks as $p)
                                     <tr>
-                                        <td>{{ $p->id}}</td>
+                                        <td>{{ $no++}}</td>
                                         <td>{{ $p->nik }}</td>
                                         <td>{{ $p->nama }}</td>
                                         <td>{{ $p->tanggallahir }}</td>
-                                        <td>{{ $p->alamat }}</td>
+                                        <td>{{ $p->dusun->dusun }}</td>
+                                        <td>{{ $p->agama->agama }}</td>
                                         <td>{{ $p->jeniskelamin }}</td>
                                         <td>{{ $p->pekerjaan }}</td>
                                         <td>
                                         <form action="/penduduk/{{$p->id}}" method="post"> 
                                             <a href="/penduduk/{{$p->id}}/edit" class="btn btn-warning">Edit</a>
+                                            <br>
                                             @csrf
+                                            <br>
                                             @method('DELETE')
                                             <button type="submit" name="delete" class="btn btn-danger">Delete</button>
                                         </form>     

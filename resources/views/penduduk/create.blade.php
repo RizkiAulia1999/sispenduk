@@ -29,8 +29,24 @@
                             <input type="text" class="form-control" required="required" name="tanggallahir"></br>
                         </div>
                         <div class="form-group">
-                            <label for="alamat">Alamat</label>
-                            <input type="text" class="form-control" required="required" name="alamat"></br>
+                            <label for="dusun">Dusun</label>
+                            <select class="form-control" name="dusun">
+                            @foreach($dusun as $d)
+                                <option value="{{$d->id}}">
+                                {{ $d->dusun }}
+                                </option>
+                            @endforeach
+                            </select></br>
+                        </div>
+                        <div class="form-group">
+                            <label for="agama">Agama</label>
+                            <select class="form-control" name="agama">
+                            @foreach($agama as $a)
+                                <option value="{{$a->id}}">
+                                {{ $a->agama }}
+                                </option>
+                            @endforeach
+                            </select></br>
                         </div>
                         <div class="form-group">
                             <label for="jeniskelamin">Jenis Kelamin</label>
