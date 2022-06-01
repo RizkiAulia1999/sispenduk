@@ -16,10 +16,12 @@ use App\Http\Controllers\KematianController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index']);
 
 Route::resource('penduduk', PendudukController::class);
 Route::resource('dusun', DusunController::class);
 Route::resource('agama', AgamaController::class);
 Route::resource('kematian', KematianController::class);
+Auth::routes();
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

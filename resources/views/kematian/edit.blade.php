@@ -20,7 +20,7 @@
                             <label for="nik">NIK</label>
                             <select class="form-control" name="nik">
                             @foreach($penduduks as $p)
-                                <option value="{{$p->id}}">
+                                <option value="{{$p->id}}" {{ $kematians->penduduk_id == $p->id? "selected":""}}">
                                 {{ $p->nik }}
                                 </option>
                             @endforeach
@@ -28,17 +28,17 @@
                         </div>
                         <div class="form-group">
                             <label for="umur">UMUR</label>
-                            <input type="text" class="form-control" required="required" name="umur"></br>
+                            <input type="text" class="form-control" required="required" name="umur" value="{{$kematians->umur}}"></br>
                         </div>
                         <div class="form-group">
                             <label for="tanggalkematian">Tanggal Kematian</label>
-                            <input type="date" class="form-control" required="required" name="tanggalkematian"></br>
+                            <input type="date" class="form-control" required="required" name="tanggalkematian" value="{{$kematians->tanggalkematian}}"></br>
                         </div>
                         <div class="form-group">
                             <label for="tempatkematian">Tempat Kematian</label>
-                            <input type="text" class="form-control" required="required" name="tempatkematian"></br>
+                            <input type="text" class="form-control" required="required" name="tempatkematian" value="{{$kematians->tempatkematian}}"></br>
                         </div>
-                        <button type="submit" name="add" class="btn btn-primary float-right">Simpan</button>    
+                        <button type="submit" name="edit" class="btn btn-primary float-right">Simpan</button>    
                     </form>  
                 </div>
             </div>
